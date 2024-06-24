@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "/node_modules/primeflex/primeflex.css";
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+@import "primereact/resources/themes/lara-light-blue/theme.css"
+  layer(primereact);
+
+@layer tailwind-base {
+  @tailwind base;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+body {
+  font-family: sans-serif;
+  background: white;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
