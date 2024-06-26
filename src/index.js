@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { PrimeReactProvider } from "primereact/api";
-
+import { Provider } from "react-redux";
+import Store from "./Store/Store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <PrimeReactProvider>
-      <App />
-    </PrimeReactProvider>
-  </BrowserRouter>
+  <Provider store={Store}>
+    <BrowserRouter>
+      <PrimeReactProvider>
+        <App />
+      </PrimeReactProvider>
+    </BrowserRouter>
+  </Provider>
 );
