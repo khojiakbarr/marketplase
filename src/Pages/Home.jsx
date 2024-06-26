@@ -6,7 +6,6 @@ import ProductCard from "../components/ProductCard";
 export default function Home() {
   useEffect(() => {
     dispatch(getProducts());
-    console.log(products);
   }, []);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
@@ -16,7 +15,7 @@ export default function Home() {
   return (
     <div className="container">
       <h1 className="text-[30px]">Products</h1>
-      {loading === "pending" && <h2>Loading...</h2>}
+      {loading === "pending" &&  <h1>Loading...</h1>}
       {error && <h2>Error: {error} </h2>}
       <div className="flex gap-[30px] flex-wrap">
         {products.products &&

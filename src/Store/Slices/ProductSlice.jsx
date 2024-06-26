@@ -6,7 +6,7 @@ const ProductSlice = createSlice({
   initialState: {
     productOne: {},
     products: [],
-    loading: "loading",
+    loading: "idle",
     error: null,
   },
   reducers: {},
@@ -17,11 +17,11 @@ const ProductSlice = createSlice({
         state.error = null;
       })
       .addCase(getProducts.fulfilled, (state, action) => {
-        state.loading = "loaging";
+        state.loading = "idle";
         state.products = action.payload;
       })
       .addCase(getProducts.rejected, (state, action) => {
-        state.loading = "loading";
+        state.loading = "idle";
         state.error = action.error.message;
       });
   },
